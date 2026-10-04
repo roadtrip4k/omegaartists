@@ -22,13 +22,14 @@ The banner's leather measures about #020D1D, so that is the ground everywhere. #
 - Generator scripts are in `../_work` (`plate.py`, `loop.py`, `vector.py`) if anything needs remaking.
 
 ## Hosting
-Live (pre-launch, noindexed) on Cloudflare Pages: https://omegaartists.pages.dev
-Cloudflare account: the shared omegaartists.hq@gmail.com account. Project "omegaartists", classic Pages (direct upload, not Git-connected).
+Live at https://omegaartists.com (launched 4 October 2026). `www` redirects to it.
+Cloudflare Pages project "omegaartists" (classic Pages, direct upload, not Git-connected) on the shared omegaartists.hq@gmail.com account; also at https://omegaartists.pages.dev.
 Redeploy after any change: `bash deploy.sh` (needs a Wrangler login on this machine).
-`_headers` keeps search engines out (X-Robots-Tag) and caches assets for a week.
+`_headers` caches assets for a week.
 
-## Before launch (held until there is first work to show)
+## Email
+hello@omegaartists.com forwards to the shared Gmail via Cloudflare Email Routing.
+
+## Still to come
 1. Replace "The work is coming." in `#the-work` with the first work, once there is some.
-2. Remove the `<meta name="robots" content="noindex, nofollow">` line from both pages, and the `X-Robots-Tag` lines from `_headers`.
-3. DNS: move the Namecheap nameservers to Cloudflare, attach omegaartists.com to the Pages project, then turn on Email Routing for hello@omegaartists.com.
-4. Uncomment the Facebook and Discord slots in both footers once they exist.
+2. Uncomment the Facebook and Discord slots in both footers once they exist.

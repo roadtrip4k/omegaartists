@@ -1,4 +1,2 @@
 /assets/*
   Cache-Control: public, max-age=604800
-/*
-  X-Robots-Tag: noindex, nofollow
