@@ -76,19 +76,22 @@ a.plain:hover, a.plain:focus-visible { background-size: 100% 1px; }
 .site-header nav a:hover, .site-header nav a[aria-current="page"] { background-size: 100% 1px; color: var(--silver-bright); }
 
 /* ---------- Hero ---------- */
-.hero {
-  position: relative; min-height: 100vh; min-height: 100svh;
-  display: grid; place-items: center; overflow: hidden;
+/* Leather: the top heading and the footer of every page. The body between stays flat navy. */
+.leather {
+  position: relative; isolation: isolate;
   background: var(--navy-deep) url("assets/hero-still.jpg") center / cover no-repeat;
-  isolation: isolate;
+}
+.leather::after { /* sinks the edges, as on the banner */
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(2,13,29,0) 40%, rgba(2,13,29,0.55) 100%);
+}
+.leather-edge { position: relative; z-index: 1; }
+
+.hero {
+  min-height: 100vh; min-height: 100svh;
+  display: grid; place-items: center; overflow: hidden;
 }
 .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
-.hero::after { /* sinks the edges and melts the foot of the hero into the page */
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background:
-    radial-gradient(ellipse 80% 70% at 50% 45%, rgba(2,13,29,0) 40%, rgba(2,13,29,0.55) 100%),
-    linear-gradient(to bottom, rgba(2,13,29,0) 70%, var(--navy-deep) 100%);
-}
 .hero-band { width: 100%; text-align: center; padding: 5rem 0 4rem; }
 .hero-band .double-rule { transform-origin: center; }
 .ornament { display: block; margin: 0 auto; color: var(--silver); }
@@ -204,7 +207,9 @@ main section { padding: var(--space) var(--gutter); position: relative; }
 .closing p { margin: 0 auto; text-align: center; }
 
 /* Footer */
-.site-footer { background: var(--navy-deep); padding: 0 var(--gutter) 3rem; color: var(--silver-shadow); font-size: 1rem; }
+.site-footer { padding: 0 var(--gutter) 3rem; color: var(--silver-shadow); font-size: 1rem; }
+.site-footer > .double-rule { margin: 0 calc(-1 * var(--gutter)); width: auto; }
+.site-footer.leather { background-position: center 35%; }
 .footer-inner { max-width: 84rem; margin: 0 auto; padding-top: 5rem; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); column-gap: 2rem; row-gap: 2.5rem; align-items: start; }
 .footer-mark { grid-column: 1 / span 4; }
 .footer-mark img { width: 3.2rem; height: auto; display: block; margin-bottom: 1.2rem; }
