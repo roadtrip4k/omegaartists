@@ -25,7 +25,7 @@ The banner's leather measures about #020D1D, so that is the ground everywhere. #
 Live at https://omegaartists.com (launched 4 October 2026). `www` redirects to it.
 Cloudflare Pages project "omegaartists" (classic Pages, direct upload, not Git-connected) on the shared omegaartists.hq@gmail.com account; also at https://omegaartists.pages.dev.
 Redeploy after any change: `bash deploy.sh` (needs a Wrangler login on this machine).
-`_headers` caches assets for a week.
+`_headers` caches assets for a week, so give a changed image or video a new filename. `deploy.sh` stamps the CSS and JS links with the commit ID, so those always refresh.
 
 ## Email
 hello@omegaartists.com forwards to the shared Gmail via Cloudflare Email Routing.
